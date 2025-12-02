@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>User Onboarding - Preferences</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#428bf0",
+              "background-light": "#f6f7f8",
+              "background-dark": "#101822",
+              "pastel-orange": "#FFCBA4",
+              "pastel-orange-text": "#c45d00",
+              "pastel-lavender": "#E6E6FA",
+              "pastel-lavender-text": "#5d3b8f",
+              "pastel-mint": "#B2F2BB",
+              "pastel-mint-text": "#1a7428",
+              "pastel-sky": "#BDE0FE",
+              "pastel-sky-text": "#1e6091",
+              "text-light-primary": "#111418",
+              "text-light-secondary": "#6b7280",
+              "text-dark-primary": "#f9fafb",
+              "text-dark-secondary": "#9ca3af",
+              "card-light": "#ffffff",
+              "card-dark": "#1f2937",
+              "border-light": "#e5e7eb",
+              "border-dark": "#374151"
+            },
+            fontFamily: {
+              "display": ["Inter", "sans-serif"]
+            },
+            borderRadius: {
+              "DEFAULT": "0.75rem",
+              "lg": "1rem",
+              "xl": "1.5rem",
+              "full": "9999px"
+            },
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            font-size: 24px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display">
+<div class="relative flex min-h-screen w-full flex-col group/design-root">
+<main class="flex flex-1 flex-col px-6 py-8">
+<div class="flex w-full items-center justify-center gap-3 py-3">
+<div class="h-2 w-2 rounded-full bg-border-light dark:bg-border-dark"></div>
+<div class="h-2 w-2 rounded-full bg-border-light dark:bg-border-dark"></div>
+<div class="h-2 w-2 rounded-full bg-text-light-primary dark:bg-text-dark-primary"></div>
+</div>
+<div class="pt-8 text-center">
+<h1 class="text-text-light-primary dark:text-text-dark-primary tracking-tight text-[32px] font-bold leading-tight">Customize Your Experience</h1>
+<p class="text-text-light-secondary dark:text-text-dark-secondary text-base font-normal leading-normal pt-2">Personalize your app for the best experience.</p>
+</div>
+<div class="flex flex-col gap-8 pt-10">
+<div class="flex flex-col gap-4 rounded-xl bg-card-light dark:bg-card-dark p-5 shadow-sm">
+<h3 class="text-text-light-primary dark:text-text-dark-primary text-lg font-bold leading-tight tracking-[-0.015em]">Stay in the Loop</h3>
+<div class="flex flex-col">
+<div class="flex items-center gap-4 min-h-14 justify-between py-2 border-b border-border-light dark:border-border-dark">
+<div class="flex items-center gap-4">
+<div class="text-text-light-primary dark:text-text-dark-primary flex items-center justify-center rounded-lg bg-background-light dark:bg-background-dark shrink-0 size-10">
+<span class="material-symbols-outlined">notifications</span>
+</div>
+<p class="text-text-light-primary dark:text-text-dark-primary text-base font-normal leading-normal flex-1 truncate">Push Notifications</p>
+</div>
+<div class="shrink-0">
+<label class="relative flex h-[31px] w-[51px] cursor-pointer items-center rounded-full border-none bg-background-light dark:bg-background-dark p-0.5 has-[:checked]:justify-end has-[:checked]:bg-primary">
+<div class="h-full w-[27px] rounded-full bg-white" style="box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 8px, rgba(0, 0, 0, 0.04) 0px 3px 1px;"></div>
+<input checked="" class="invisible absolute" type="checkbox"/>
+</label>
+</div>
+</div>
+<div class="flex items-center gap-4 min-h-14 justify-between py-2">
+<div class="flex items-center gap-4">
+<div class="text-text-light-primary dark:text-text-dark-primary flex items-center justify-center rounded-lg bg-background-light dark:bg-background-dark shrink-0 size-10">
+<span class="material-symbols-outlined">mail</span>
+</div>
+<p class="text-text-light-primary dark:text-text-dark-primary text-base font-normal leading-normal flex-1 truncate">Email Updates</p>
+</div>
+<div class="shrink-0">
+<label class="relative flex h-[31px] w-[51px] cursor-pointer items-center rounded-full border-none bg-background-light dark:bg-background-dark p-0.5 has-[:checked]:justify-end has-[:checked]:bg-primary">
+<div class="h-full w-[27px] rounded-full bg-white" style="box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 8px, rgba(0, 0, 0, 0.04) 0px 3px 1px;"></div>
+<input class="invisible absolute" type="checkbox"/>
+</label>
+</div>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-4 rounded-xl bg-card-light dark:bg-card-dark p-5 shadow-sm">
+<h3 class="text-text-light-primary dark:text-text-dark-primary text-lg font-bold leading-tight tracking-[-0.015em]">What interests you most?</h3>
+<div class="flex flex-wrap gap-3">
+<label class="cursor-pointer">
+<input class="peer sr-only" type="checkbox"/>
+<div class="rounded-full border border-pastel-orange-text/50 bg-transparent px-4 py-2 text-sm font-medium text-pastel-orange-text peer-checked:bg-pastel-orange peer-checked:text-pastel-orange-text peer-checked:border-pastel-orange">System Performance Alerts</div>
+</label>
+<label class="cursor-pointer">
+<input checked="" class="peer sr-only" type="checkbox"/>
+<div class="rounded-full border border-pastel-sky-text/50 bg-transparent px-4 py-2 text-sm font-medium text-pastel-sky-text peer-checked:bg-pastel-sky peer-checked:text-pastel-sky-text peer-checked:border-pastel-sky">Stress Test Summaries</div>
+</label>
+<label class="cursor-pointer">
+<input checked="" class="peer sr-only" type="checkbox"/>
+<div class="rounded-full border border-pastel-mint-text/50 bg-transparent px-4 py-2 text-sm font-medium text-pastel-mint-text peer-checked:bg-pastel-mint peer-checked:text-pastel-mint-text peer-checked:border-pastel-mint">New Feature Announcements</div>
+</label>
+<label class="cursor-pointer">
+<input class="peer sr-only" type="checkbox"/>
+<div class="rounded-full border border-pastel-lavender-text/50 bg-transparent px-4 py-2 text-sm font-medium text-pastel-lavender-text peer-checked:bg-pastel-lavender peer-checked:text-pastel-lavender-text peer-checked:border-pastel-lavender">Community Insights</div>
+</label>
+</div>
+</div>
+</div>
+<div class="mt-auto flex flex-col items-center gap-4 pt-12 pb-4">
+<button class="flex h-14 w-full items-center justify-center rounded-full bg-pastel-orange text-pastel-orange-text text-base font-bold transition-transform active:scale-95">Finish Setup</button>
+<button class="w-full text-center text-base font-medium text-text-light-secondary dark:text-text-dark-secondary">Skip for now</button>
+</div>
+</main>
+</div>
+</body></html>

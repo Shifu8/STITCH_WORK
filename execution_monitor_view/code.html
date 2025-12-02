@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Execution Monitor View</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#2bcdee",
+            "background-light": "#f6f8f8",
+            "background-dark": "#101f22",
+            // Gen Z Palette
+            "surface-light": "#FFFFFF",
+            "surface-dark": "#1e1e1e",
+            "text-light-primary": "#1A1A1A",
+            "text-dark-primary": "#EAEAEA",
+            "text-light-secondary": "#6b7280",
+            "text-dark-secondary": "#9ca3af",
+            "mint": "#A7F3D0",
+            "lavender": "#C4B5FD",
+            "baby-blue": "#BFDBFE",
+            "coral": "#FDBA74",
+            "green-indicator": "#10b981",
+            "red-indicator": "#ef4444"
+          },
+          fontFamily: {
+            "display": ["Inter", "sans-serif"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+        font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display">
+<div class="relative flex h-auto min-h-screen w-full flex-col bg-background-light dark:bg-background-dark group/design-root overflow-x-hidden">
+<!-- NavigationDrawer (Initially hidden on mobile, can be toggled) -->
+<!-- The provided example has an overlay. For a mobile-first design, this would be toggled. -->
+<!-- Let's assume it's off-screen for the main view -->
+<main class="flex flex-col flex-1">
+<!-- TopAppBar -->
+<div class="sticky top-0 z-40 flex items-center bg-background-light/80 dark:bg-background-dark/80 p-4 backdrop-blur-sm justify-between border-b border-slate-200 dark:border-slate-800">
+<button class="flex items-center justify-center h-12 w-12 text-text-light-primary dark:text-dark-primary">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+<h2 class="text-text-light-primary dark:text-dark-primary text-xl font-bold leading-tight tracking-[-0.015em] flex-1 text-center">Execution Monitor</h2>
+<div class="flex w-12 items-center justify-end">
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 w-12 text-text-light-primary dark:text-dark-primary gap-2 text-base font-bold leading-normal tracking-[0.015em] min-w-0 p-0">
+<span class="material-symbols-outlined text-3xl dark:hidden">light_mode</span>
+<span class="material-symbols-outlined text-3xl hidden dark:block">dark_mode</span>
+</button>
+</div>
+</div>
+<!-- Main Content -->
+<div class="flex flex-col gap-4 p-4">
+<!-- Status Indicator Card -->
+<div class="flex items-stretch justify-between gap-4 rounded-xl bg-surface-light dark:bg-surface-dark p-4 shadow-sm">
+<div class="flex flex-[2_2_0px] flex-col gap-3">
+<div class="flex flex-col gap-1">
+<p class="text-text-light-secondary dark:text-dark-secondary text-sm font-medium leading-normal">STATUS</p>
+<p class="text-green-indicator text-lg font-bold leading-tight flex items-center gap-2"><span class="material-symbols-outlined text-2xl">pacemaker</span>Running</p>
+</div>
+<p class="text-text-light-secondary dark:text-dark-secondary text-sm font-normal leading-normal">The stress test is currently in progress.</p>
+<button class="mt-2 flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-coral/20 text-coral gap-2 text-sm font-bold leading-normal w-fit">
+<span class="material-symbols-outlined text-lg">stop_circle</span>
+<span class="truncate">Stop Test</span>
+</button>
+</div>
+</div>
+<!-- Progress Timeline Card -->
+<div class="flex flex-col gap-3 p-4 rounded-xl bg-surface-light dark:bg-surface-dark shadow-sm">
+<div class="flex gap-4 justify-between items-center">
+<p class="text-text-light-primary dark:text-dark-primary text-base font-medium leading-normal">Elapsed Time: 00:39:00</p>
+<p class="text-primary text-sm font-bold leading-normal">65%</p>
+</div>
+<div class="rounded-full bg-slate-200 dark:bg-slate-700 h-2.5">
+<div class="h-2.5 rounded-full bg-primary" style="width: 65%;"></div>
+</div>
+<p class="text-text-light-secondary dark:text-dark-secondary text-sm font-normal leading-normal">Est. Time Remaining: 00:21:00</p>
+</div>
+<!-- Real-time Graph Panels -->
+<div class="grid grid-cols-1 gap-4">
+<!-- CPU Usage Card -->
+<div class="flex flex-col gap-2 rounded-xl border border-slate-200 dark:border-slate-800 p-4 bg-surface-light dark:bg-surface-dark shadow-sm">
+<p class="text-text-light-primary dark:text-dark-primary text-base font-medium leading-normal">CPU Usage</p>
+<p class="text-text-light-primary dark:text-dark-primary tracking-light text-3xl font-bold leading-tight truncate">75%</p>
+<div class="flex gap-1 items-center">
+<p class="text-text-light-secondary dark:text-dark-secondary text-sm font-normal leading-normal">Live</p>
+<p class="text-green-indicator text-sm font-medium leading-normal flex items-center"><span class="material-symbols-outlined text-base">arrow_upward</span>+2.1%</p>
+</div>
+<div class="flex min-h-[120px] flex-1 flex-col gap-4 pt-4">
+<svg fill="none" height="100" preserveaspectratio="none" viewbox="-3 0 478 102" width="100%" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 72.8C18.1538 72.8 18.1538 14.1 36.3077 14.1C54.4615 14.1 54.4615 27.5 72.6154 27.5C90.7692 27.5 90.7692 62.2 108.923 62.2C127.077 62.2 127.077 22.1 145.231 22.1C163.385 22.1 163.385 67.5 181.538 67.5C199.692 67.5 199.692 40.8 217.846 40.8C236 40.8 236 30.1 254.154 30.1C272.308 30.1 272.308 80.9 290.462 80.9C308.615 80.9 308.615 99.6 326.769 99.6C344.923 99.6 344.923 0.666667 363.077 0.666667C381.231 0.666667 381.231 54.2 399.385 54.2C417.538 54.2 417.538 86.2 435.692 86.2C453.846 86.2 453.846 16.8 472 16.8" stroke="#BFDBFE" stroke-linecap="round" stroke-width="3"></path>
+</svg>
+</div>
+</div>
+<!-- RAM Card -->
+<div class="flex flex-col gap-2 rounded-xl border border-slate-200 dark:border-slate-800 p-4 bg-surface-light dark:bg-surface-dark shadow-sm">
+<p class="text-text-light-primary dark:text-dark-primary text-base font-medium leading-normal">RAM</p>
+<p class="text-text-light-primary dark:text-dark-primary tracking-light text-3xl font-bold leading-tight truncate">10.2 GB</p>
+<div class="flex gap-1 items-center">
+<p class="text-text-light-secondary dark:text-dark-secondary text-sm font-normal leading-normal">Live</p>
+<p class="text-red-indicator text-sm font-medium leading-normal flex items-center"><span class="material-symbols-outlined text-base">arrow_downward</span>-0.5%</p>
+</div>
+<div class="flex min-h-[120px] flex-1 flex-col gap-4 pt-4">
+<svg fill="none" height="100" preserveaspectratio="none" viewbox="-3 0 478 102" width="100%" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 27.5C18.1538 27.5 18.1538 72.8 36.3077 72.8C54.4615 72.8 54.4615 54.2 72.6154 54.2C90.7692 54.2 90.7692 14.1 108.923 14.1C127.077 14.1 127.077 62.2 145.231 62.2C163.385 62.2 163.385 22.1 181.538 22.1C199.692 22.1 199.692 40.8 217.846 40.8C236 40.8 236 67.5 254.154 67.5C272.308 67.5 272.308 80.9 290.462 80.9C308.615 80.9 308.615 0.666667 326.769 0.666667C344.923 0.666667 344.923 99.6 363.077 99.6C381.231 99.6 381.231 30.1 399.385 30.1C417.538 30.1 417.538 86.2 435.692 86.2C453.846 86.2 453.846 16.8 472 16.8" stroke="#C4B5FD" stroke-linecap="round" stroke-width="3"></path>
+</svg>
+</div>
+</div>
+<!-- Requests/Sec Card -->
+<div class="flex flex-col gap-2 rounded-xl border border-slate-200 dark:border-slate-800 p-4 bg-surface-light dark:bg-surface-dark shadow-sm">
+<p class="text-text-light-primary dark:text-dark-primary text-base font-medium leading-normal">Requests/Sec</p>
+<p class="text-text-light-primary dark:text-dark-primary tracking-light text-3xl font-bold leading-tight truncate">1,204 RPS</p>
+<div class="flex gap-1 items-center">
+<p class="text-text-light-secondary dark:text-dark-secondary text-sm font-normal leading-normal">Live</p>
+<p class="text-green-indicator text-sm font-medium leading-normal flex items-center"><span class="material-symbols-outlined text-base">arrow_upward</span>+10.3%</p>
+</div>
+<div class="flex min-h-[120px] flex-1 flex-col gap-4 pt-4">
+<svg fill="none" height="100" preserveaspectratio="none" viewbox="-3 0 478 102" width="100%" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 62.2C18.1538 62.2 18.1538 27.5 36.3077 27.5C54.4615 27.5 54.4615 72.8 72.6154 72.8C90.7692 72.8 90.7692 14.1 108.923 14.1C127.077 14.1 127.077 54.2 145.231 54.2C163.385 54.2 163.385 86.2 181.538 86.2C199.692 86.2 199.692 40.8 217.846 40.8C236 40.8 236 67.5 254.154 67.5C272.308 67.5 272.308 0.666667 290.462 0.666667C308.615 0.666667 308.615 99.6 326.769 99.6C344.923 99.6 344.923 30.1 363.077 30.1C381.231 30.1 381.231 80.9 399.385 80.9C417.538 80.9 417.538 16.8 435.692 16.8C453.846 16.8 453.846 22.1 472 22.1" stroke="#A7F3D0" stroke-linecap="round" stroke-width="3"></path>
+</svg>
+</div>
+</div>
+<!-- Error Rate Card -->
+<div class="flex flex-col gap-2 rounded-xl border border-slate-200 dark:border-slate-800 p-4 bg-surface-light dark:bg-surface-dark shadow-sm">
+<p class="text-text-light-primary dark:text-dark-primary text-base font-medium leading-normal">Error Rate</p>
+<p class="text-text-light-primary dark:text-dark-primary tracking-light text-3xl font-bold leading-tight truncate">0.8%</p>
+<div class="flex gap-1 items-center">
+<p class="text-text-light-secondary dark:text-dark-secondary text-sm font-normal leading-normal">Live</p>
+<p class="text-green-indicator text-sm font-medium leading-normal flex items-center"><span class="material-symbols-outlined text-base">arrow_upward</span>+0.1%</p>
+</div>
+<div class="flex min-h-[120px] flex-1 flex-col gap-4 pt-4">
+<svg fill="none" height="100" preserveaspectratio="none" viewbox="-3 0 478 102" width="100%" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 99.6C18.1538 99.6 18.1538 86.2 36.3077 86.2C54.4615 86.2 54.4615 72.8 72.6154 72.8C90.7692 72.8 90.7692 62.2 108.923 62.2C127.077 62.2 127.077 54.2 145.231 54.2C163.385 54.2 163.385 40.8 181.538 40.8C199.692 40.8 199.692 27.5 217.846 27.5C236 27.5 236 14.1 254.154 14.1C272.308 14.1 272.308 0.666667 290.462 0.666667C308.615 0.666667 308.615 16.8 326.769 16.8C344.923 16.8 344.923 22.1 363.077 22.1C381.231 22.1 381.231 30.1 399.385 30.1C417.538 30.1 417.538 16.8 435.692 16.8C453.846 16.8 453.846 22.1 472 22.1" stroke="#FDBA74" stroke-linecap="round" stroke-width="3"></path>
+</svg>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

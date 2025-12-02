@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Stress Test List</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+      }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#BDB2FF",
+              "background-light": "#F8F9FA",
+              "background-dark": "#1C1C1E",
+              "text-light": "#212529",
+              "text-dark": "#F2F2F7",
+              "card-light": "#FFFFFF",
+              "card-dark": "#2C2C2E",
+              "border-light": "#E5E5EA",
+              "border-dark": "#38383A",
+              "success": "#C8E6C9",
+              "success-text": "#1E4620",
+              "running": "#BBDEFB",
+              "running-text": "#0D47A1",
+              "failed": "#FFCDD2",
+              "failed-text": "#B71C1C",
+            },
+            fontFamily: {
+              "display": ["Inter", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-text-light dark:text-text-dark">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<!-- NavigationDrawer (Simulated, off-screen for this view) -->
+<!-- In a real app, a button in the TopAppBar would toggle its visibility. -->
+<div class="absolute left-0 top-0 z-50 size-full min-h-screen bg-black/40 hidden">
+<div class="flex h-full min-h-screen w-10/12 flex-col gap-4 bg-background-light dark:bg-background-dark p-4">
+<div class="flex items-center gap-3 px-4 pb-2 pt-4">
+<img class="h-10 w-10 rounded-full object-cover" data-alt="User profile picture of a man with glasses smiling" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDkgCQZm8J89NUN9Yul7lz8l9m-Qp7rUNqwS-amA6xO30-O8chg7gSTnqAKseA_02zhIXp8yA401lcczFaGe6DBa9Mav1kS0U_GNjSfptlpNfwcAY6d7ErsDdL4ary3ftFia-bua7YreB5JxLcc-F5i43w6ZCgIKgnRUoF79CeX4_bIdLhiiipNglNaP_W7KG5t5G1FJz0UHhaMK6uj2t3WxII9VRnpvV3yLY14mUAOkZFfECa2b6NAMeaHLvaWtasPR0uj213jBtw"/>
+<p class="text-text-light dark:text-text-dark text-[22px] font-bold leading-tight tracking-[-0.015em]">Ana Rodriguez</p>
+</div>
+<ul class="flex flex-col gap-2">
+<li class="flex h-12 cursor-pointer items-center gap-4 rounded-lg px-4 hover:bg-primary/20">
+<span class="material-symbols-outlined text-text-light dark:text-text-dark">dashboard</span>
+<p class="text-text-light dark:text-text-dark text-base font-bold leading-tight truncate">Dashboard</p>
+</li>
+<li class="flex h-12 cursor-pointer items-center gap-4 rounded-lg px-4 bg-primary/20">
+<span class="material-symbols-outlined text-text-light dark:text-text-dark">science</span>
+<p class="text-text-light dark:text-text-dark text-base font-bold leading-tight truncate">Tests</p>
+</li>
+<li class="flex h-12 cursor-pointer items-center gap-4 rounded-lg px-4 hover:bg-primary/20">
+<span class="material-symbols-outlined text-text-light dark:text-text-dark">settings</span>
+<p class="text-text-light dark:text-text-dark text-base font-bold leading-tight truncate">Settings</p>
+</li>
+</ul>
+<div class="mt-auto flex items-center justify-between p-4">
+<p class="text-text-light dark:text-text-dark font-bold">Dark Mode</p>
+<button aria-checked="false" class="relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent bg-gray-200 dark:bg-primary transition-colors duration-200 ease-in-out focus:outline-none" role="switch">
+<span class="pointer-events-none inline-block h-5 w-5 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out translate-x-0 dark:translate-x-5"></span>
+</button>
+</div>
+</div>
+</div>
+<!-- Main Content -->
+<main class="w-full">
+<!-- TopAppBar -->
+<div class="flex items-center p-4 pb-2 justify-between sticky top-0 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm z-10">
+<button class="flex size-12 shrink-0 items-center justify-start text-text-light dark:text-text-dark">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<h1 class="text-text-light dark:text-text-dark text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">Stress Tests</h1>
+<div class="w-12 flex justify-end">
+<img class="h-8 w-8 rounded-full object-cover" data-alt="User profile picture of a man with glasses smiling" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAIyD6_8b6ckXH6FCzKedaQ4ofF1x28TrJK0K4m5g3KOwOuB27MB1_O-tLeqgSj-oWxdL83oHuEzX_KaIPDQ0haLoxbK6vyD8y70Mp5ZUdGtqQucXv4L8Cx8bGufIUxm5ANZEmjjvqelE9zhBYF1xDZllwcMdv_-SOx9womr8CPO-IYCaYCCvRSHnt_9l7-EzxbTijjTloKGy1mtqhY-9hgKAyz9VfRx_yQnnKM5ZxC8sCAXRaaO5uKcaey8Ahy3Kj_al8ehvZRYzg"/>
+</div>
+</div>
+<div class="flex flex-col gap-4 p-4">
+<!-- Stats -->
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+<div class="flex flex-col gap-2 rounded-xl p-4 bg-card-light dark:bg-card-dark border border-border-light dark:border-border-dark">
+<p class="text-text-light dark:text-text-dark text-base font-medium leading-normal">Total Tests</p>
+<p class="text-text-light dark:text-text-dark tracking-light text-2xl font-bold leading-tight">128</p>
+</div>
+<div class="flex flex-col gap-2 rounded-xl p-4 bg-card-light dark:bg-card-dark border border-border-light dark:border-border-dark">
+<p class="text-text-light dark:text-text-dark text-base font-medium leading-normal">Tests Running</p>
+<p class="text-text-light dark:text-text-dark tracking-light text-2xl font-bold leading-tight">4</p>
+</div>
+<div class="flex flex-col gap-2 rounded-xl p-4 bg-card-light dark:bg-card-dark border border-border-light dark:border-border-dark">
+<p class="text-text-light dark:text-text-dark text-base font-medium leading-normal">Success Rate</p>
+<p class="text-text-light dark:text-text-dark tracking-light text-2xl font-bold leading-tight">92%</p>
+</div>
+</div>
+<!-- SingleButton -->
+<button class="flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-xl h-12 px-5 bg-primary text-text-light gap-2 text-base font-bold leading-normal tracking-[0.015em]">
+<span class="material-symbols-outlined">add_circle</span>
+<span class="truncate">Create New Test</span>
+</button>
+<!-- SearchBar -->
+<div class="py-1">
+<label class="flex flex-col min-w-40 h-12 w-full">
+<div class="flex w-full flex-1 items-stretch rounded-xl h-full bg-slate-100 dark:bg-card-dark">
+<div class="text-gray-500 dark:text-gray-400 flex items-center justify-center pl-4">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden text-text-light dark:text-text-dark focus:outline-0 focus:ring-0 border-none bg-transparent h-full placeholder:text-gray-500 dark:placeholder:text-gray-400 px-2 text-base font-normal leading-normal" placeholder="Search by name..." value=""/>
+</div>
+</label>
+</div>
+<!-- Filters -->
+<div class="flex gap-2 overflow-x-auto pb-2 -mx-4 px-4">
+<button class="flex-shrink-0 cursor-pointer items-center justify-center rounded-full h-8 px-4 bg-primary text-text-light text-sm font-bold">All</button>
+<button class="flex-shrink-0 cursor-pointer items-center justify-center rounded-full h-8 px-4 bg-slate-100 dark:bg-card-dark text-text-light dark:text-text-dark text-sm font-bold">Success</button>
+<button class="flex-shrink-0 cursor-pointer items-center justify-center rounded-full h-8 px-4 bg-slate-100 dark:bg-card-dark text-text-light dark:text-text-dark text-sm font-bold">Running</button>
+<button class="flex-shrink-0 cursor-pointer items-center justify-center rounded-full h-8 px-4 bg-slate-100 dark:bg-card-dark text-text-light dark:text-text-dark text-sm font-bold">Failed</button>
+</div>
+<!-- Test List -->
+<div class="flex flex-col gap-3">
+<!-- Test Item 1 -->
+<div class="flex items-center gap-4 rounded-xl p-4 bg-card-light dark:bg-card-dark border border-border-light dark:border-border-dark">
+<div class="flex-1">
+<div class="flex items-center gap-2">
+<p class="text-text-light dark:text-text-dark font-bold text-base">API Load Test - Q4</p>
+<span class="text-xs font-bold px-2 py-0.5 rounded-full bg-success text-success-text">Success</span>
+</div>
+<div class="flex gap-4 text-sm text-gray-500 dark:text-gray-400 mt-1">
+<span>Duration: 15 min</span>
+<span>Nodes: 5</span>
+</div>
+</div>
+<button class="text-text-light dark:text-text-dark">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+<!-- Test Item 2 -->
+<div class="flex items-center gap-4 rounded-xl p-4 bg-card-light dark:bg-card-dark border border-border-light dark:border-border-dark">
+<div class="flex-1">
+<div class="flex items-center gap-2">
+<p class="text-text-light dark:text-text-dark font-bold text-base">Database Performance</p>
+<span class="text-xs font-bold px-2 py-0.5 rounded-full bg-running text-running-text">Running</span>
+</div>
+<div class="flex gap-4 text-sm text-gray-500 dark:text-gray-400 mt-1">
+<span>Duration: 45 min</span>
+<span>Nodes: 12</span>
+</div>
+</div>
+<button class="text-text-light dark:text-text-dark">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+<!-- Test Item 3 -->
+<div class="flex items-center gap-4 rounded-xl p-4 bg-card-light dark:bg-card-dark border border-border-light dark:border-border-dark">
+<div class="flex-1">
+<div class="flex items-center gap-2">
+<p class="text-text-light dark:text-text-dark font-bold text-base">Frontend Asset Loading</p>
+<span class="text-xs font-bold px-2 py-0.5 rounded-full bg-failed text-failed-text">Failed</span>
+</div>
+<div class="flex gap-4 text-sm text-gray-500 dark:text-gray-400 mt-1">
+<span>Duration: 5 min</span>
+<span>Nodes: 3</span>
+</div>
+</div>
+<button class="text-text-light dark:text-text-dark">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+<!-- Test Item 4 -->
+<div class="flex items-center gap-4 rounded-xl p-4 bg-card-light dark:bg-card-dark border border-border-light dark:border-border-dark">
+<div class="flex-1">
+<div class="flex items-center gap-2">
+<p class="text-text-light dark:text-text-dark font-bold text-base">User Auth Spike Test</p>
+<span class="text-xs font-bold px-2 py-0.5 rounded-full bg-success text-success-text">Success</span>
+</div>
+<div class="flex gap-4 text-sm text-gray-500 dark:text-gray-400 mt-1">
+<span>Duration: 30 min</span>
+<span>Nodes: 20</span>
+</div>
+</div>
+<button class="text-text-light dark:text-text-dark">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

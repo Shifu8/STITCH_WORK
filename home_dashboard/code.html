@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Home Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#2bcdee",
+            "background-light": "#f6f8f8",
+            "background-dark": "#101f22",
+          },
+          fontFamily: {
+            "display": ["Inter", "sans-serif"]
+          },
+          borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings:
+      'FILL' 0,
+      'wght' 400,
+      'GRAD' 0,
+      'opsz' 24
+    }
+    .material-symbols-outlined.fill {
+      font-variation-settings:
+      'FILL' 1,
+      'wght' 400,
+      'GRAD' 0,
+      'opsz' 24
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display">
+<div class="relative min-h-screen w-full overflow-x-hidden">
+<!-- NavigationDrawer (Hidden by default, shown with JS) -->
+<!-- For demo purposes, this is visible. In a real app, a state change would toggle visibility -->
+<div class="absolute left-0 top-0 z-50 h-full w-full bg-black/40 hidden" id="drawer-overlay">
+<div class="flex h-full min-h-screen w-10/12 max-w-sm flex-col gap-4 bg-background-light p-4 dark:bg-background-dark">
+<div class="flex items-center gap-3 px-4 pb-2 pt-4">
+<img alt="User avatar" class="h-10 w-10 rounded-full object-cover" data-alt="Abstract painting of a face" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtJp87fb38jiQwdkn1oEK-WKOb-SF3vfrV-lqsOVRirD_snMNQrFELRGdTyFwi0rrycQP8L6aSyb_FA7Nhd-uVfU2BOenYJt2K2FgvwA_jatDHDoRIfuK0urYqdUMwX9JUXZYUTQV90a5qEV-lA2YPimC3TXiWRzReWC8hFUnhUJbmGKqiYf-nVPA6j-ayigI3O3BMRju1WbM2rsax_kKq2qAXn_mNAClV8lwjoSO3DQxy6Kp6muoy8RVQbzwS2eQDy3Ayrf4DPqI"/>
+<p class="text-slate-800 dark:text-slate-200 text-lg font-bold">Maria Garcia</p>
+</div>
+<ul class="flex flex-col gap-2">
+<li class="flex h-12 items-center gap-4 rounded-xl px-4 bg-primary/20">
+<span class="material-symbols-outlined fill text-primary">dashboard</span>
+<p class="text-slate-900 dark:text-white text-base font-bold truncate">Dashboard</p>
+</li>
+<li class="flex h-12 items-center gap-4 rounded-xl px-4">
+<span class="material-symbols-outlined text-slate-600 dark:text-slate-400">science</span>
+<p class="text-slate-800 dark:text-slate-200 text-base font-medium truncate">Stress Tests</p>
+</li>
+<li class="flex h-12 items-center gap-4 rounded-xl px-4">
+<span class="material-symbols-outlined text-slate-600 dark:text-slate-400">description</span>
+<p class="text-slate-800 dark:text-slate-200 text-base font-medium truncate">Reports</p>
+</li>
+<li class="flex h-12 items-center gap-4 rounded-xl px-4">
+<span class="material-symbols-outlined text-slate-600 dark:text-slate-400">analytics</span>
+<p class="text-slate-800 dark:text-slate-200 text-base font-medium truncate">Analytics</p>
+</li>
+<li class="flex h-12 items-center gap-4 rounded-xl px-4">
+<span class="material-symbols-outlined text-slate-600 dark:text-slate-400">settings</span>
+<p class="text-slate-800 dark:text-slate-200 text-base font-medium truncate">Settings</p>
+</li>
+<li class="flex h-12 items-center gap-4 rounded-xl px-4">
+<span class="material-symbols-outlined text-slate-600 dark:text-slate-400">help</span>
+<p class="text-slate-800 dark:text-slate-200 text-base font-medium truncate">Help</p>
+</li>
+</ul>
+</div>
+</div>
+<!-- Main Content -->
+<div class="flex flex-col">
+<!-- TopAppBar -->
+<div class="flex items-center bg-background-light p-4 dark:bg-background-dark justify-between sticky top-0 z-10 border-b border-slate-200 dark:border-slate-800">
+<button class="flex size-12 shrink-0 items-center justify-center text-slate-800 dark:text-slate-200">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<h2 class="text-slate-900 dark:text-white text-xl font-bold leading-tight tracking-tight flex-1 text-center">Dashboard</h2>
+<div class="flex w-12 items-center justify-end">
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 w-10 text-slate-800 dark:text-slate-200">
+<span class="material-symbols-outlined dark:hidden">light_mode</span>
+<span class="material-symbols-outlined hidden dark:inline">dark_mode</span>
+</button>
+</div>
+</div>
+<!-- Stats -->
+<div class="grid grid-cols-2 gap-4 p-4">
+<div class="flex flex-1 flex-col gap-2 rounded-xl p-4 bg-gradient-to-br from-cyan-100 to-blue-200 dark:from-cyan-900/50 dark:to-blue-900/50 shadow-sm">
+<p class="text-slate-700 dark:text-slate-300 text-sm font-medium leading-normal">Executed Tests</p>
+<p class="text-slate-900 dark:text-white tracking-tight text-3xl font-bold leading-tight">1,204</p>
+<p class="text-green-600 dark:text-green-400 text-sm font-medium leading-normal">+5.2%</p>
+</div>
+<div class="flex flex-1 flex-col gap-2 rounded-xl p-4 bg-gradient-to-br from-purple-100 to-indigo-200 dark:from-purple-900/50 dark:to-indigo-900/50 shadow-sm">
+<p class="text-slate-700 dark:text-slate-300 text-sm font-medium leading-normal">Active Tests</p>
+<p class="text-slate-900 dark:text-white tracking-tight text-3xl font-bold leading-tight">15</p>
+<p class="text-green-600 dark:text-green-400 text-sm font-medium leading-normal">+2</p>
+</div>
+<div class="flex flex-1 flex-col gap-2 rounded-xl p-4 bg-gradient-to-br from-teal-100 to-green-200 dark:from-teal-900/50 dark:to-green-900/50 shadow-sm">
+<p class="text-slate-700 dark:text-slate-300 text-sm font-medium leading-normal">Cluster Nodes</p>
+<p class="text-slate-900 dark:text-white tracking-tight text-3xl font-bold leading-tight">8</p>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium leading-normal">Healthy</p>
+</div>
+<div class="flex flex-1 flex-col gap-2 rounded-xl p-4 bg-gradient-to-br from-rose-100 to-orange-200 dark:from-rose-900/50 dark:to-orange-900/50 shadow-sm">
+<p class="text-slate-700 dark:text-slate-300 text-sm font-medium leading-normal">Success Rate</p>
+<p class="text-slate-900 dark:text-white tracking-tight text-3xl font-bold leading-tight">98.7%</p>
+<p class="text-red-600 dark:text-red-400 text-sm font-medium leading-normal">-0.1%</p>
+</div>
+</div>
+<!-- UNL Inspired Illustration Section -->
+<div class="px-4 pb-2 pt-4">
+<div class="relative w-full h-32 rounded-xl overflow-hidden bg-slate-200 dark:bg-slate-800">
+<img alt="Abstract gradient representing Loja landscape" class="absolute inset-0 w-full h-full object-cover opacity-80" data-alt="Abstract gradient with green and blue tones" data-location="Loja, Ecuador" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmXTnJfMi_V1unumiBIpI1NZVW9S_Muc6s0cY8pHv_8CM0a_hZgKLMt_5kha4faUjkrWUu9Rzb6P0UVb7q5dagElSmTGv7FvvBO1xM48O8ji-eSkiTrpY-Rnm27PRvFGXT86A_a2kbXPz_DNJzxQp63fa_01gbHG1u9g9m_aAHgCT30OS_2cHPX_QDJ9QQV3vBw35cNV9EqNlbAAZMd8QFh45JL12kds5ORHf_XpFqohgFWtvPXH1EOIgZOhIk0RcMYpqDo0kCVBk"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+<div class="relative z-10 p-4 flex flex-col justify-end h-full">
+<h3 class="text-white text-lg font-bold">Universidad Nacional de Loja</h3>
+<p class="text-white/80 text-sm">Stress Test Management</p>
+</div>
+</div>
+</div>
+<!-- SectionHeader -->
+<h3 class="text-slate-900 dark:text-white text-xl font-bold leading-tight tracking-tight px-4 pb-2 pt-6">Recent Activity</h3>
+<!-- ListItems -->
+<div class="flex flex-col pb-4">
+<div class="flex items-center gap-4 bg-background-light dark:bg-background-dark px-4 min-h-[72px] py-2 justify-between">
+<div class="flex items-center gap-4">
+<div class="flex items-center justify-center rounded-full bg-green-100 dark:bg-green-900/50 shrink-0 size-10 text-green-600 dark:text-green-300">
+<span class="material-symbols-outlined text-xl">check_circle</span>
+</div>
+<div class="flex flex-col justify-center">
+<p class="text-slate-800 dark:text-slate-200 text-base font-medium leading-normal line-clamp-1">Test 'API-v2' completed</p>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-normal leading-normal line-clamp-2">Successfully finished in 5m 32s.</p>
+</div>
+</div>
+<div class="shrink-0"><p class="text-slate-400 dark:text-slate-500 text-sm font-normal leading-normal">2m ago</p></div>
+</div>
+<div class="flex items-center gap-4 bg-background-light dark:bg-background-dark px-4 min-h-[72px] py-2 justify-between">
+<div class="flex items-center gap-4">
+<div class="flex items-center justify-center rounded-full bg-blue-100 dark:bg-blue-900/50 shrink-0 size-10 text-blue-600 dark:text-blue-300">
+<span class="material-symbols-outlined text-xl">play_circle</span>
+</div>
+<div class="flex flex-col justify-center">
+<p class="text-slate-800 dark:text-slate-200 text-base font-medium leading-normal line-clamp-1">Test 'Frontend-Load' initiated</p>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-normal leading-normal line-clamp-2">Started by admin.</p>
+</div>
+</div>
+<div class="shrink-0"><p class="text-slate-400 dark:text-slate-500 text-sm font-normal leading-normal">15m ago</p></div>
+</div>
+<div class="flex items-center gap-4 bg-background-light dark:bg-background-dark px-4 min-h-[72px] py-2 justify-between">
+<div class="flex items-center gap-4">
+<div class="flex items-center justify-center rounded-full bg-red-100 dark:bg-red-900/50 shrink-0 size-10 text-red-600 dark:text-red-300">
+<span class="material-symbols-outlined text-xl">cancel</span>
+</div>
+<div class="flex flex-col justify-center">
+<p class="text-slate-800 dark:text-slate-200 text-base font-medium leading-normal line-clamp-1">Test 'DB-Integrity' failed</p>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-normal leading-normal line-clamp-2">Error code: 503 Service Unavailable</p>
+</div>
+</div>
+<div class="shrink-0"><p class="text-slate-400 dark:text-slate-500 text-sm font-normal leading-normal">1h ago</p></div>
+</div>
+<div class="flex items-center gap-4 bg-background-light dark:bg-background-dark px-4 min-h-[72px] py-2 justify-between">
+<div class="flex items-center gap-4">
+<div class="flex items-center justify-center rounded-full bg-yellow-100 dark:bg-yellow-900/50 shrink-0 size-10 text-yellow-600 dark:text-yellow-300">
+<span class="material-symbols-outlined text-xl">warning</span>
+</div>
+<div class="flex flex-col justify-center">
+<p class="text-slate-800 dark:text-slate-200 text-base font-medium leading-normal line-clamp-1">High CPU on Node 4</p>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-normal leading-normal line-clamp-2">Usage reached 92%.</p>
+</div>
+</div>
+<div class="shrink-0"><p class="text-slate-400 dark:text-slate-500 text-sm font-normal leading-normal">3h ago</p></div>
+</div>
+</div>
+</div>
+</div>
+</body></html>
